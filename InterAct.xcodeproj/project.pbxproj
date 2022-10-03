@@ -9,14 +9,35 @@
 /* Begin PBXBuildFile section */
 		B06A873728E5E2B400201623 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06A873628E5E2B400201623 /* AppDelegate.swift */; };
 		B06A873928E5E2B400201623 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06A873828E5E2B400201623 /* SceneDelegate.swift */; };
-		B06A873B28E5E2B400201623 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06A873A28E5E2B400201623 /* ViewController.swift */; };
-		B06A873E28E5E2B400201623 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B06A873C28E5E2B400201623 /* Main.storyboard */; };
 		B06A874128E5E2B400201623 /* InterAct.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B06A873F28E5E2B400201623 /* InterAct.xcdatamodeld */; };
-		B06A874328E5E2B500201623 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B06A874228E5E2B500201623 /* Assets.xcassets */; };
 		B06A874628E5E2B500201623 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B06A874428E5E2B500201623 /* LaunchScreen.storyboard */; };
 		B06A875128E5E2B500201623 /* InterActTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06A875028E5E2B500201623 /* InterActTests.swift */; };
 		B06A875B28E5E2B500201623 /* InterActUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06A875A28E5E2B500201623 /* InterActUITests.swift */; };
 		B06A875D28E5E2B500201623 /* InterActUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06A875C28E5E2B500201623 /* InterActUITestsLaunchTests.swift */; };
+		B06A876A28E5E35900201623 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06A876928E5E35900201623 /* Coordinator.swift */; };
+		B06A876D28E5E47A00201623 /* AddPersonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06A876C28E5E47A00201623 /* AddPersonViewModel.swift */; };
+		B06A876F28E5E49300201623 /* AddPersonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06A876E28E5E49300201623 /* AddPersonViewController.swift */; };
+		B06A877128E5E49E00201623 /* AddPerson.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B06A877028E5E49E00201623 /* AddPerson.storyboard */; };
+		B06A877A28E5E64D00201623 /* PersonListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06A877928E5E64D00201623 /* PersonListViewModel.swift */; };
+		B06A877E28E5E66B00201623 /* PersonList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B06A877D28E5E66B00201623 /* PersonList.storyboard */; };
+		B06A878028E5E6D100201623 /* PersonListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06A877F28E5E6D100201623 /* PersonListViewController.swift */; };
+		B06A878428E5EB4500201623 /* RecordInteractionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06A878328E5EB4500201623 /* RecordInteractionViewController.swift */; };
+		B06A878628E5EB5500201623 /* RecordInteraction.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B06A878528E5EB5500201623 /* RecordInteraction.storyboard */; };
+		B06A878828E5EB6700201623 /* RecordInteractionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06A878728E5EB6700201623 /* RecordInteractionViewModel.swift */; };
+		B06A878A28E5F53E00201623 /* PersonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06A878928E5F53E00201623 /* PersonTableViewCell.swift */; };
+		B0B2EDCE28EB396B000E7795 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0B2EDCD28EB396B000E7795 /* Assets.xcassets */; };
+		B0D9D3BA28E725F1006EA0DE /* ProfilePicture.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D9D3B928E725F1006EA0DE /* ProfilePicture.swift */; };
+		B0D9D3BD28E780B4006EA0DE /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D9D3BC28E780B4006EA0DE /* SettingsViewModel.swift */; };
+		B0D9D3BF28E780C8006EA0DE /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D9D3BE28E780C8006EA0DE /* SettingsViewController.swift */; };
+		B0D9D3C128E780D3006EA0DE /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0D9D3C028E780D3006EA0DE /* Settings.storyboard */; };
+		B0D9D3C428EA005D006EA0DE /* Interactions.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0D9D3C328EA005D006EA0DE /* Interactions.storyboard */; };
+		B0D9D3C628EA0069006EA0DE /* InteractionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D9D3C528EA0069006EA0DE /* InteractionsViewModel.swift */; };
+		B0D9D3C828EA0079006EA0DE /* InteractionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D9D3C728EA0079006EA0DE /* InteractionsViewController.swift */; };
+		B0D9D3CA28EA012C006EA0DE /* InteractionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D9D3C928EA012C006EA0DE /* InteractionTableViewCell.swift */; };
+		B0D9D3D728EB1790006EA0DE /* Interaction+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D9D3D328EB1790006EA0DE /* Interaction+CoreDataClass.swift */; };
+		B0D9D3D828EB1790006EA0DE /* Interaction+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D9D3D428EB1790006EA0DE /* Interaction+CoreDataProperties.swift */; };
+		B0D9D3D928EB1790006EA0DE /* Person+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D9D3D528EB1790006EA0DE /* Person+CoreDataClass.swift */; };
+		B0D9D3DA28EB1790006EA0DE /* Person+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D9D3D628EB1790006EA0DE /* Person+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,10 +61,7 @@
 		B06A873328E5E2B400201623 /* InterAct.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InterAct.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B06A873628E5E2B400201623 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B06A873828E5E2B400201623 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		B06A873A28E5E2B400201623 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		B06A873D28E5E2B400201623 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B06A874028E5E2B400201623 /* InterAct.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = InterAct.xcdatamodel; sourceTree = "<group>"; };
-		B06A874228E5E2B500201623 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B06A874528E5E2B500201623 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B06A874728E5E2B500201623 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B06A874C28E5E2B500201623 /* InterActTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InterActTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -51,6 +69,30 @@
 		B06A875628E5E2B500201623 /* InterActUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InterActUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B06A875A28E5E2B500201623 /* InterActUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterActUITests.swift; sourceTree = "<group>"; };
 		B06A875C28E5E2B500201623 /* InterActUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterActUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		B06A876928E5E35900201623 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		B06A876C28E5E47A00201623 /* AddPersonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPersonViewModel.swift; sourceTree = "<group>"; };
+		B06A876E28E5E49300201623 /* AddPersonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPersonViewController.swift; sourceTree = "<group>"; };
+		B06A877028E5E49E00201623 /* AddPerson.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddPerson.storyboard; sourceTree = "<group>"; };
+		B06A877928E5E64D00201623 /* PersonListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonListViewModel.swift; sourceTree = "<group>"; };
+		B06A877D28E5E66B00201623 /* PersonList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PersonList.storyboard; sourceTree = "<group>"; };
+		B06A877F28E5E6D100201623 /* PersonListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonListViewController.swift; sourceTree = "<group>"; };
+		B06A878328E5EB4500201623 /* RecordInteractionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordInteractionViewController.swift; sourceTree = "<group>"; };
+		B06A878528E5EB5500201623 /* RecordInteraction.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RecordInteraction.storyboard; sourceTree = "<group>"; };
+		B06A878728E5EB6700201623 /* RecordInteractionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordInteractionViewModel.swift; sourceTree = "<group>"; };
+		B06A878928E5F53E00201623 /* PersonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonTableViewCell.swift; sourceTree = "<group>"; };
+		B0B2EDCD28EB396B000E7795 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = SOURCE_ROOT; };
+		B0D9D3B928E725F1006EA0DE /* ProfilePicture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePicture.swift; sourceTree = "<group>"; };
+		B0D9D3BC28E780B4006EA0DE /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
+		B0D9D3BE28E780C8006EA0DE /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		B0D9D3C028E780D3006EA0DE /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
+		B0D9D3C328EA005D006EA0DE /* Interactions.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Interactions.storyboard; sourceTree = "<group>"; };
+		B0D9D3C528EA0069006EA0DE /* InteractionsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteractionsViewModel.swift; sourceTree = "<group>"; };
+		B0D9D3C728EA0079006EA0DE /* InteractionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteractionsViewController.swift; sourceTree = "<group>"; };
+		B0D9D3C928EA012C006EA0DE /* InteractionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteractionTableViewCell.swift; sourceTree = "<group>"; };
+		B0D9D3D328EB1790006EA0DE /* Interaction+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Interaction+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		B0D9D3D428EB1790006EA0DE /* Interaction+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Interaction+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		B0D9D3D528EB1790006EA0DE /* Person+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Person+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		B0D9D3D628EB1790006EA0DE /* Person+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Person+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,14 +143,16 @@
 		B06A873528E5E2B400201623 /* InterAct */ = {
 			isa = PBXGroup;
 			children = (
+				B0D9D3B828E725D3006EA0DE /* Utilities */,
+				B06A878128E5E73F00201623 /* Navigation */,
+				B06A877728E5E62600201623 /* UI */,
+				B06A877228E5E4AC00201623 /* Model */,
 				B06A873628E5E2B400201623 /* AppDelegate.swift */,
 				B06A873828E5E2B400201623 /* SceneDelegate.swift */,
-				B06A873A28E5E2B400201623 /* ViewController.swift */,
-				B06A873C28E5E2B400201623 /* Main.storyboard */,
-				B06A874228E5E2B500201623 /* Assets.xcassets */,
 				B06A874428E5E2B500201623 /* LaunchScreen.storyboard */,
 				B06A874728E5E2B500201623 /* Info.plist */,
 				B06A873F28E5E2B400201623 /* InterAct.xcdatamodeld */,
+				B0B2EDCD28EB396B000E7795 /* Assets.xcassets */,
 			);
 			path = InterAct;
 			sourceTree = "<group>";
@@ -128,6 +172,97 @@
 				B06A875C28E5E2B500201623 /* InterActUITestsLaunchTests.swift */,
 			);
 			path = InterActUITests;
+			sourceTree = "<group>";
+		};
+		B06A876B28E5E39500201623 /* AddPerson */ = {
+			isa = PBXGroup;
+			children = (
+				B06A876E28E5E49300201623 /* AddPersonViewController.swift */,
+				B06A877028E5E49E00201623 /* AddPerson.storyboard */,
+				B06A876C28E5E47A00201623 /* AddPersonViewModel.swift */,
+			);
+			path = AddPerson;
+			sourceTree = "<group>";
+		};
+		B06A877228E5E4AC00201623 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B0D9D3D328EB1790006EA0DE /* Interaction+CoreDataClass.swift */,
+				B0D9D3D428EB1790006EA0DE /* Interaction+CoreDataProperties.swift */,
+				B0D9D3D528EB1790006EA0DE /* Person+CoreDataClass.swift */,
+				B0D9D3D628EB1790006EA0DE /* Person+CoreDataProperties.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B06A877728E5E62600201623 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				B0D9D3C228EA0047006EA0DE /* Interactions */,
+				B0D9D3BB28E77C80006EA0DE /* Settings */,
+				B06A878228E5EB2C00201623 /* RecordInteraction */,
+				B06A877828E5E63100201623 /* PersonList */,
+				B06A876B28E5E39500201623 /* AddPerson */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		B06A877828E5E63100201623 /* PersonList */ = {
+			isa = PBXGroup;
+			children = (
+				B06A878928E5F53E00201623 /* PersonTableViewCell.swift */,
+				B06A877F28E5E6D100201623 /* PersonListViewController.swift */,
+				B06A877D28E5E66B00201623 /* PersonList.storyboard */,
+				B06A877928E5E64D00201623 /* PersonListViewModel.swift */,
+			);
+			path = PersonList;
+			sourceTree = "<group>";
+		};
+		B06A878128E5E73F00201623 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				B06A876928E5E35900201623 /* Coordinator.swift */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
+		B06A878228E5EB2C00201623 /* RecordInteraction */ = {
+			isa = PBXGroup;
+			children = (
+				B06A878328E5EB4500201623 /* RecordInteractionViewController.swift */,
+				B06A878528E5EB5500201623 /* RecordInteraction.storyboard */,
+				B06A878728E5EB6700201623 /* RecordInteractionViewModel.swift */,
+			);
+			path = RecordInteraction;
+			sourceTree = "<group>";
+		};
+		B0D9D3B828E725D3006EA0DE /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				B0D9D3B928E725F1006EA0DE /* ProfilePicture.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		B0D9D3BB28E77C80006EA0DE /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				B0D9D3BE28E780C8006EA0DE /* SettingsViewController.swift */,
+				B0D9D3C028E780D3006EA0DE /* Settings.storyboard */,
+				B0D9D3BC28E780B4006EA0DE /* SettingsViewModel.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		B0D9D3C228EA0047006EA0DE /* Interactions */ = {
+			isa = PBXGroup;
+			children = (
+				B0D9D3C928EA012C006EA0DE /* InteractionTableViewCell.swift */,
+				B0D9D3C728EA0079006EA0DE /* InteractionsViewController.swift */,
+				B0D9D3C328EA005D006EA0DE /* Interactions.storyboard */,
+				B0D9D3C528EA0069006EA0DE /* InteractionsViewModel.swift */,
+			);
+			path = Interactions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -234,9 +369,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B0D9D3C428EA005D006EA0DE /* Interactions.storyboard in Resources */,
+				B06A878628E5EB5500201623 /* RecordInteraction.storyboard in Resources */,
 				B06A874628E5E2B500201623 /* LaunchScreen.storyboard in Resources */,
-				B06A874328E5E2B500201623 /* Assets.xcassets in Resources */,
-				B06A873E28E5E2B400201623 /* Main.storyboard in Resources */,
+				B0D9D3C128E780D3006EA0DE /* Settings.storyboard in Resources */,
+				B0B2EDCE28EB396B000E7795 /* Assets.xcassets in Resources */,
+				B06A877128E5E49E00201623 /* AddPerson.storyboard in Resources */,
+				B06A877E28E5E66B00201623 /* PersonList.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,10 +400,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B06A873B28E5E2B400201623 /* ViewController.swift in Sources */,
 				B06A873728E5E2B400201623 /* AppDelegate.swift in Sources */,
+				B06A878A28E5F53E00201623 /* PersonTableViewCell.swift in Sources */,
+				B0D9D3CA28EA012C006EA0DE /* InteractionTableViewCell.swift in Sources */,
+				B06A876A28E5E35900201623 /* Coordinator.swift in Sources */,
+				B0D9D3D728EB1790006EA0DE /* Interaction+CoreDataClass.swift in Sources */,
+				B06A877A28E5E64D00201623 /* PersonListViewModel.swift in Sources */,
+				B06A876D28E5E47A00201623 /* AddPersonViewModel.swift in Sources */,
+				B0D9D3C628EA0069006EA0DE /* InteractionsViewModel.swift in Sources */,
+				B06A878828E5EB6700201623 /* RecordInteractionViewModel.swift in Sources */,
+				B0D9D3BD28E780B4006EA0DE /* SettingsViewModel.swift in Sources */,
 				B06A873928E5E2B400201623 /* SceneDelegate.swift in Sources */,
+				B0D9D3D828EB1790006EA0DE /* Interaction+CoreDataProperties.swift in Sources */,
+				B0D9D3D928EB1790006EA0DE /* Person+CoreDataClass.swift in Sources */,
+				B06A878428E5EB4500201623 /* RecordInteractionViewController.swift in Sources */,
+				B0D9D3DA28EB1790006EA0DE /* Person+CoreDataProperties.swift in Sources */,
+				B06A878028E5E6D100201623 /* PersonListViewController.swift in Sources */,
+				B0D9D3BA28E725F1006EA0DE /* ProfilePicture.swift in Sources */,
 				B06A874128E5E2B400201623 /* InterAct.xcdatamodeld in Sources */,
+				B06A876F28E5E49300201623 /* AddPersonViewController.swift in Sources */,
+				B0D9D3C828EA0079006EA0DE /* InteractionsViewController.swift in Sources */,
+				B0D9D3BF28E780C8006EA0DE /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -301,14 +457,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		B06A873C28E5E2B400201623 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B06A873D28E5E2B400201623 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		B06A874428E5E2B500201623 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -444,9 +592,11 @@
 				DEVELOPMENT_TEAM = QWSTH3UGG6;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = InterAct/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Access Camera to Add Pictures of People";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Access Photo Library to Use Pictures of People";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -472,9 +622,11 @@
 				DEVELOPMENT_TEAM = QWSTH3UGG6;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = InterAct/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Access Camera to Add Pictures of People";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Access Photo Library to Use Pictures of People";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (

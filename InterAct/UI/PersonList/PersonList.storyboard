@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--PersonList-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="PersonList" title="PersonList" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Y6W-OH-hqX" customClass="PersonListViewController" customModule="InterAct" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="JUc-fe-qSo">
+                                <rect key="frame" x="0.0" y="64" width="414" height="798"/>
+                                <subviews>
+                                    <searchBar contentMode="redraw" id="We4-lS-VgL">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="51"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </searchBar>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="110" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="ffh-Uw-Rl8">
+                                        <rect key="frame" x="0.0" y="51" width="414" height="747"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <prototypes>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="PersonCell" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PersonCell" rowHeight="105" id="5Kq-w8-sZV" customClass="PersonTableViewCell" customModule="InterAct" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="44.5" width="414" height="105"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="5Kq-w8-sZV" id="7sR-h6-EXm">
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="105"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tyz-K3-HKn">
+                                                            <rect key="frame" x="10" y="10" width="394" height="95"/>
+                                                            <subviews>
+                                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="VlH-MA-6sO">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="394" height="95"/>
+                                                                    <subviews>
+                                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RML-hE-u2f">
+                                                                            <rect key="frame" x="8" y="8" width="75" height="79"/>
+                                                                            <constraints>
+                                                                                <constraint firstAttribute="width" constant="75" id="Myv-wb-Ltz"/>
+                                                                                <constraint firstAttribute="height" constant="75" id="w1q-a1-1ob"/>
+                                                                            </constraints>
+                                                                            <imageReference key="image" image="person" catalog="system" symbolScale="large"/>
+                                                                        </imageView>
+                                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="93l-LK-UkR">
+                                                                            <rect key="frame" x="103" y="10" width="213" height="75"/>
+                                                                            <subviews>
+                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sVf-3D-usm">
+                                                                                    <rect key="frame" x="8" y="10" width="197" height="0.0"/>
+                                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                                    <nil key="textColor"/>
+                                                                                    <nil key="highlightedColor"/>
+                                                                                </label>
+                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Need to meet" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="KrU-lK-rkR">
+                                                                                    <rect key="frame" x="8" y="10" width="197" height="55"/>
+                                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                                    <nil key="textColor"/>
+                                                                                    <nil key="highlightedColor"/>
+                                                                                </label>
+                                                                            </subviews>
+                                                                            <directionalEdgeInsets key="directionalLayoutMargins" top="10" leading="8" bottom="10" trailing="8"/>
+                                                                        </stackView>
+                                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="xmark.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="T2E-07-IJk">
+                                                                            <rect key="frame" x="336" y="10.5" width="50" height="74"/>
+                                                                            <constraints>
+                                                                                <constraint firstAttribute="width" constant="50" id="1qg-vB-RIa"/>
+                                                                            </constraints>
+                                                                        </imageView>
+                                                                    </subviews>
+                                                                    <directionalEdgeInsets key="directionalLayoutMargins" top="10" leading="8" bottom="10" trailing="8"/>
+                                                                </stackView>
+                                                            </subviews>
+                                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="bottom" secondItem="VlH-MA-6sO" secondAttribute="bottom" id="4PP-4H-U0y"/>
+                                                                <constraint firstItem="VlH-MA-6sO" firstAttribute="top" secondItem="tyz-K3-HKn" secondAttribute="top" id="5dk-Qc-in5"/>
+                                                                <constraint firstItem="VlH-MA-6sO" firstAttribute="leading" secondItem="tyz-K3-HKn" secondAttribute="leading" id="Pvb-Kq-9dg"/>
+                                                                <constraint firstAttribute="trailing" secondItem="VlH-MA-6sO" secondAttribute="trailing" id="uD6-CQ-6Zd"/>
+                                                            </constraints>
+                                                        </view>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="tyz-K3-HKn" firstAttribute="leading" secondItem="7sR-h6-EXm" secondAttribute="leading" constant="10" id="CFI-XJ-HuG"/>
+                                                        <constraint firstAttribute="trailing" secondItem="tyz-K3-HKn" secondAttribute="trailing" constant="10" id="Ohq-pa-AM7"/>
+                                                        <constraint firstItem="tyz-K3-HKn" firstAttribute="top" secondItem="7sR-h6-EXm" secondAttribute="top" constant="10" id="Pni-8J-BeD"/>
+                                                    </constraints>
+                                                </tableViewCellContentView>
+                                                <directionalEdgeInsets key="directionalLayoutMargins" top="10" leading="10" bottom="10" trailing="15"/>
+                                                <connections>
+                                                    <outlet property="alertIconImageView" destination="T2E-07-IJk" id="Lup-qO-lke"/>
+                                                    <outlet property="lastInteractionDateLabel" destination="KrU-lK-rkR" id="Jmv-9m-1cD"/>
+                                                    <outlet property="nameLabel" destination="sVf-3D-usm" id="iN6-5O-5jn"/>
+                                                    <outlet property="personView" destination="tyz-K3-HKn" id="0Rm-5I-GPg"/>
+                                                    <outlet property="portraitImageView" destination="RML-hE-u2f" id="ZMv-V8-x70"/>
+                                                </connections>
+                                            </tableViewCell>
+                                        </prototypes>
+                                    </tableView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="JUc-fe-qSo" secondAttribute="trailing" id="8lA-zA-e9n"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="JUc-fe-qSo" secondAttribute="bottom" id="AXe-He-mRx"/>
+                            <constraint firstItem="JUc-fe-qSo" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="20" id="ULn-84-MRa"/>
+                            <constraint firstItem="JUc-fe-qSo" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="qsf-SB-Q0c"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="personListSearchBar" destination="We4-lS-VgL" id="E4s-vT-crq"/>
+                        <outlet property="personListTableView" destination="ffh-Uw-Rl8" id="YL7-O3-Rov"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="133" y="98"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="person" catalog="system" width="128" height="117"/>
+        <image name="xmark.circle" catalog="system" width="128" height="121"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

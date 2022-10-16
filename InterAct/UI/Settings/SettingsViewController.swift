@@ -8,13 +8,8 @@
 import UIKit
 
 class SettingsViewController: UIViewController {
-    @IBOutlet weak var regularityPickerView: UIPickerView! {
-        didSet {
-            regularityPickerView.dataSource = viewModel
-            regularityPickerView.delegate = self
-        }
-    }
-    @IBOutlet weak var saveButton: UIButton!
+
+    @IBOutlet weak var settingsTableView: UITableView!
     var viewModel: SettingsViewModel? {
         didSet {
             viewModel?.viewDelegate = self
@@ -24,18 +19,16 @@ class SettingsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        settingsTableView.delegate = self
+        settingsTableView.dataSource = viewModel
     }
-    @IBAction func saveButtonTapped(_ sender: Any) {
-        let regularityIndex = regularityPickerView.selectedRow(inComponent: 0)
-        viewModel?.saveSettings(regularityIndex)
-    }
-    
+
 }
 extension SettingsViewController: SettingsViewModelDelegate {
     
 }
-extension SettingsViewController: UIPickerViewDelegate {
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        viewModel?.regularity[row]
+extension SettingsViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        viewModel?.didSelectSetting(at: indexPath.row)
     }
 }

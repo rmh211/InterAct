@@ -3,15 +3,17 @@
     <entity name="Interaction" representedClassName="Interaction" syncable="YES">
         <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="interactionQuality" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" customClassName="InteractionQuality"/>
+        <attribute name="notes" optional="YES" attributeType="String"/>
         <relationship name="person" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Person" inverseName="interactions" inverseEntity="Person"/>
     </entity>
     <entity name="Person" representedClassName="Person" syncable="YES">
         <attribute name="image" attributeType="Binary" valueTransformerName="" customClassName="UIImage"/>
         <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="notes" optional="YES" attributeType="String"/>
         <relationship name="interactions" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Interaction" inverseName="person" inverseEntity="Interaction"/>
     </entity>
     <elements>
-        <element name="Interaction" positionX="-36" positionY="9" width="128" height="74"/>
-        <element name="Person" positionX="0" positionY="45" width="128" height="74"/>
+        <element name="Interaction" positionX="-36" positionY="9" width="128" height="89"/>
+        <element name="Person" positionX="0" positionY="45" width="128" height="89"/>
     </elements>
 </model>

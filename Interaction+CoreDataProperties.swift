@@ -2,7 +2,7 @@
 //  Interaction+CoreDataProperties.swift
 //  InterAct
 //
-//  Created by Robert Huber on 10/3/22.
+//  Created by Robert Huber on 10/6/22.
 //
 //
 
@@ -18,6 +18,7 @@ extension Interaction {
 
     @NSManaged public var date: Date
     @NSManaged public var interactionQuality: Int
+    @NSManaged public var notes: String?
     @NSManaged public var person: Person
 
 }

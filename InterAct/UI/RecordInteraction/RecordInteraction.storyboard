@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="ii5-AG-2g1">
-                                <rect key="frame" x="0.0" y="64" width="414" height="678.5"/>
+                                <rect key="frame" x="0.0" y="64" width="414" height="860.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="7pE-2Q-EXS">
                                         <rect key="frame" x="25" y="20" width="364" height="110"/>
@@ -45,14 +45,14 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OLA-wr-WLl">
-                                        <rect key="frame" x="25" y="220" width="364" height="30"/>
+                                        <rect key="frame" x="25" y="220" width="364" height="10"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="Ur6-hD-Yf4"/>
+                                            <constraint firstAttribute="height" constant="10" id="Ur6-hD-Yf4"/>
                                         </constraints>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jle-jj-R8K">
-                                        <rect key="frame" x="25" y="270" width="364" height="216"/>
+                                        <rect key="frame" x="25" y="250" width="364" height="216"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kya-0y-kz1">
                                                 <rect key="frame" x="0.0" y="0.0" width="41.5" height="216"/>
@@ -66,27 +66,61 @@
                                         </subviews>
                                     </stackView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OFV-CF-Fiw">
-                                        <rect key="frame" x="25" y="506" width="364" height="20"/>
+                                        <rect key="frame" x="25" y="486" width="364" height="0.0"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="20" id="Qg4-ls-alV"/>
+                                            <constraint firstAttribute="height" id="Qg4-ls-alV"/>
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QSh-Fn-65s">
-                                        <rect key="frame" x="25" y="546" width="364" height="20.5"/>
+                                        <rect key="frame" x="25" y="506" width="364" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="gZK-tN-euD">
-                                        <rect key="frame" x="25" y="586.5" width="364" height="32"/>
+                                        <rect key="frame" x="25" y="546.5" width="364" height="32"/>
                                         <segments>
                                             <segment title="First"/>
                                             <segment title="Second"/>
                                         </segments>
                                     </segmentedControl>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xw9-8p-JfA">
+                                        <rect key="frame" x="25" y="597.5" width="364" height="128"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SNj-Og-i8S">
+                                                <rect key="frame" x="0.0" y="0.0" width="100" height="128"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="100" id="SBI-JK-Dei"/>
+                                                </constraints>
+                                            </view>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CXW-9J-1cH">
+                                                <rect key="frame" x="100" y="0.0" width="164" height="128"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Add Notes"/>
+                                                <connections>
+                                                    <action selector="addNotesButtonTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="mOo-CV-XW3"/>
+                                                </connections>
+                                            </button>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P0q-bA-y3A">
+                                                <rect key="frame" x="264" y="0.0" width="100" height="128"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="100" id="rGS-B1-YIo"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                    </stackView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Eu3-gT-iTN">
+                                        <rect key="frame" x="25" y="745.5" width="364" height="20"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20" id="cAF-ci-cYA"/>
+                                        </constraints>
+                                    </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7S6-UE-tls">
-                                        <rect key="frame" x="25" y="637.5" width="364" height="31"/>
+                                        <rect key="frame" x="25" y="785.5" width="364" height="31"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Save Interaction"/>
                                         <connections>
@@ -106,6 +140,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="addNotesButton" destination="CXW-9J-1cH" id="HQx-m1-WVY"/>
                         <outlet property="datePickerLabel" destination="Kya-0y-kz1" id="UsC-kp-mVu"/>
                         <outlet property="interactionDatePicker" destination="tgJ-2j-E7q" id="3di-ba-Bms"/>
                         <outlet property="interactionQualitySegementedControl" destination="gZK-tN-euD" id="MiJ-tV-6cM"/>

@@ -12,7 +12,7 @@ import CoreData
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
-    var appCoordinator: AppCoordinator?
+    var rootCoordinator: RootCoordinator?
     var defaults = UserDefaults.standard
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
@@ -22,10 +22,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         window = UIWindow.init(frame: UIScreen.main.bounds)
         let navigationController = UINavigationController()
-        appCoordinator = AppCoordinator(navigationController: navigationController)
+        rootCoordinator = RootCoordinator(navigationController: navigationController)
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
-        appCoordinator?.start()
+        rootCoordinator?.start()
+        
         return true
     }
     

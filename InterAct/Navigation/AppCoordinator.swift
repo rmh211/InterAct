@@ -8,16 +8,13 @@
 import Foundation
 import UIKit
 import CoreData
-
-protocol Coordinator {
-    var navigationController: UINavigationController {get set}
-    
-    func start()
+protocol AppCoordinatorDelegate: AnyObject {
+    func appCoordinatorDidSelectSettings(_ appCoordinator: AppCoordinator)
 }
-
 class AppCoordinator: Coordinator {
     var navigationController: UINavigationController
-    
+    var childCoordinators: [Coordinator] = []
+    weak var delegate: AppCoordinatorDelegate?
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
         navigationController.navigationBar.prefersLargeTitles = true
@@ -35,10 +32,21 @@ class AppCoordinator: Coordinator {
         recordInteractionViewController(willRecordTransactionWith: person, inContext: context)
     }
     func openSettings() {
-        settingsViewController()
+        delegate?.appCoordinatorDidSelectSettings(self)
     }
     func showDetailInteractionsView(of person: Person, in context: NSManagedObjectContext) {
         interactionsViewController(didSelectPerson: person, in: context)
+    }
+    func showNotesPopover(titled title: String, withNotes notes: String = "") {
+        notesViewController(titled: title, withSavedNotes: notes)
+    }
+    func didAddNotes(notes: String) {
+        navigationController.dismiss(animated: true)
+        guard var vc = navigationController.viewControllers.last as? Noteable else { return }
+        vc.notes = notes
+    }
+    func show(interaction: Interaction, in context:NSManagedObjectContext){
+        interactionViewController(willDisplayInteraction: interaction, saveInConext: context)
     }
 }
 extension AppCoordinator: PersonListViewModelCoordinatorDelegate {
@@ -68,6 +76,10 @@ extension AppCoordinator: PersonListViewModelCoordinatorDelegate {
     }
 }
 extension AppCoordinator: AddPersonViewModelCoordinatorDelegate {
+    func addPersonViewController(_ addPersonViewModel: AddPersonViewModel, didRequestNotesTitled title: String) {
+        showNotesPopover(titled: title)
+    }
+    
     func addPersonViewController(_ managedObjectContext: NSManagedObjectContext) {
         if let viewController = UIStoryboard(name: "AddPerson", bundle: nil).instantiateViewController(withIdentifier: "AddPerson") as? AddPersonViewController {
             viewController.viewModel = AddPersonViewModel()
@@ -81,8 +93,11 @@ extension AppCoordinator: AddPersonViewModelCoordinatorDelegate {
     }
 }
 extension AppCoordinator: RecordInteractionViewModelCoordinatorDelegate {
+    func recordInteractionViewController(_ recordInteractionViewModel: RecordInteractionViewModel, didSelectAddNoteWithTitle title: String, withSavedNotes notes: String) {
+        showNotesPopover(titled: title, withNotes: notes)
+    }
     func recordInteractionViewControllerDidRecordTransaction(_ recordInteractionViewModel: RecordInteractionViewModel) {
-        navigationController.viewControllers.popLast()
+        let _ = navigationController.viewControllers.popLast()
     }
     
     func recordInteractionViewController(willRecordTransactionWith person: Person, inContext context: NSManagedObjectContext) {
@@ -95,20 +110,15 @@ extension AppCoordinator: RecordInteractionViewModelCoordinatorDelegate {
         }
     }
 }
-extension AppCoordinator: SettingsViewModelCoordinatorDelegate {
-    func settingsViewControllerDidSaveSettings(_ settingViewModel: SettingsViewModel) {
-        showPersonList()
+extension AppCoordinator: InteractionsViewModelCoordinatorDelegate {
+    func interactionsViewController(_ interactionsViewModel: InteractionsViewModel, willDisplayInteractionDetail interaction: Interaction, saveInContext context: NSManagedObjectContext) {
+        show(interaction: interaction, in: context)
     }
     
-    func settingsViewController() {
-        if let viewController = UIStoryboard(name: "Settings", bundle: nil).instantiateViewController(withIdentifier: "SettingsView") as? SettingsViewController {
-            viewController.viewModel = SettingsViewModel()
-            viewController.viewModel?.coordinatorDelegate = self
-            navigationController.pushViewController(viewController, animated: true)
-        }
+    func interactionsViewController(_ interactionsViewModel: InteractionsViewModel, didSelectAddNotes notes: String) {
+        showNotesPopover(titled: "Personal Notes", withNotes: notes)
     }
-}
-extension AppCoordinator: InteractionsViewModelCoordinatorDelegate {
+    
     func interactionsViewController(_ interactionsViewModel: InteractionsViewModel, didSelectAddInteractionWithPerson person: Person, in context: NSManagedObjectContext) {
         addInteraction(with: person, in: context)
     }
@@ -122,6 +132,37 @@ extension AppCoordinator: InteractionsViewModelCoordinatorDelegate {
             navigationController.pushViewController(viewController, animated: true)
         }
     }
+}
+extension AppCoordinator: NotesViewModelCoordinatorDelegate {
+    func notesViewController(titled title: String, withSavedNotes notes: String = "") {
+        if let viewController = UIStoryboard(name: "Notes", bundle: nil).instantiateViewController(withIdentifier: "Notes") as? NotesViewController {
+            viewController.viewModel = NotesViewModel()
+            viewController.viewModel?.title = title
+            viewController.viewModel?.savedNotes = notes
+            viewController.viewModel?.coordinatorDelegate = self
+            viewController.modalPresentationStyle = .overCurrentContext
+            navigationController.present(viewController, animated: true)
+        }
+    }
+
+    func notesViewController(_ notesViewModel: NotesViewModel, didSaveNote notes: String) {
+        didAddNotes(notes: notes)
+    }
     
     
+}
+extension AppCoordinator: InteractionViewModelCoordinatorDelegate {
+    func interactionViewController(_ interactionViewModel: InteractionViewModel, didSaveInteraction interaction: Interaction) {
+        let _ = navigationController.viewControllers.popLast()
+    }
+    
+    func interactionViewController(willDisplayInteraction interaction: Interaction, saveInConext context: NSManagedObjectContext)  {
+        if let viewController = UIStoryboard(name: "Interaction", bundle: nil).instantiateViewController(withIdentifier: "Interaction") as? InteractionViewController {
+            viewController.viewModel = InteractionViewModel()
+            viewController.viewModel?.coordinatorDelegate = self
+            viewController.viewModel?.interaction = interaction
+            viewController.viewModel?.context = context
+            navigationController.pushViewController(viewController, animated: true)
+        }
+    }
 }

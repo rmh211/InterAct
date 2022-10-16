@@ -34,6 +34,7 @@ class PersonListViewController: UIViewController {
         viewModel?.fetchPeople()
         viewModel?.getRegularity()
         personListTableView.reloadData()
+        navigationController?.navigationBar.prefersLargeTitles = true
     }
     @objc func addPersonButtonTapped() {
         viewModel?.addPerson()

@@ -2,13 +2,12 @@
 //  Person+CoreDataProperties.swift
 //  InterAct
 //
-//  Created by Robert Huber on 10/3/22.
+//  Created by Robert Huber on 10/6/22.
 //
 //
 
 import Foundation
 import CoreData
-import UIKit
 
 
 extension Person {
@@ -17,8 +16,9 @@ extension Person {
         return NSFetchRequest<Person>(entityName: "Person")
     }
 
-    @NSManaged public var name: String
     @NSManaged public var image: Data
+    @NSManaged public var name: String
+    @NSManaged public var notes: String?
     @NSManaged public var interactions: NSOrderedSet?
 
 }

@@ -34,5 +34,4 @@ class InteractionTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
     }
-
 }

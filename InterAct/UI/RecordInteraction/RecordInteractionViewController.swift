@@ -7,12 +7,19 @@
 
 import UIKit
 
-class RecordInteractionViewController: UIViewController {
+class RecordInteractionViewController: UIViewController, Noteable{
     @IBOutlet weak var saveInteractionButton: UIButton! {
         didSet {
             saveInteractionButton.layer.cornerRadius = 5
             saveInteractionButton.layer.backgroundColor = UIColor.systemBlue.cgColor
             saveInteractionButton.tintColor = .white
+        }
+    }
+    @IBOutlet weak var addNotesButton: UIButton! {
+        didSet {
+            addNotesButton.layer.cornerRadius = 5
+            addNotesButton.layer.backgroundColor = UIColor.systemBlue.cgColor
+            addNotesButton.tintColor = .white
         }
     }
     @IBOutlet weak var profileImageView: UIImageView! {
@@ -49,6 +56,11 @@ class RecordInteractionViewController: UIViewController {
         }
     }
     var imagePicker: UIImagePickerController!
+    var notes: String? {
+        didSet {
+            viewModel?.notes = notes
+        }
+    }
     var viewModel: RecordInteractionViewModel? {
         didSet {
             viewModel?.viewDelegate = self
@@ -57,11 +69,11 @@ class RecordInteractionViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-
-    }
-    override func viewDidAppear(_ animated: Bool) {
         viewModel?.initializeProfile()
         initializeTapGestureRecognizer()
+    }
+    override func viewDidAppear(_ animated: Bool) {
+  
     }
     @objc func changePersonImage() {
         guard UIImagePickerController.isSourceTypeAvailable(.camera) else {
@@ -70,12 +82,14 @@ class RecordInteractionViewController: UIViewController {
         }
         selectImageFrom(.camera)
     }
+    @IBAction func addNotesButtonTapped(_ sender: Any) {
+        viewModel?.addNotes()
+    }
     func initializeTapGestureRecognizer() {
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(changePersonImage))
         profileImageView.addGestureRecognizer(tapGestureRecognizer)
     }
     @IBAction func saveInteractionTapped(_ sender: Any) {
-        print(interactionDatePicker.date)
         guard let image = profileImageView.image else { return }
         viewModel?.saveInteraction(on: interactionDatePicker.date, qualityOf: interactionQualitySegementedControl.selectedSegmentIndex, image: image)
     }

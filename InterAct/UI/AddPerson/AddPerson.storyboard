@@ -35,7 +35,21 @@
                                             </imageView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LuJ-lQ-YOi">
                                                 <rect key="frame" x="276" y="0.0" width="138" height="128"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q4y-z1-dhu">
+                                                        <rect key="frame" x="0.0" y="97" width="45" height="31"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain" image="exclamationmark.circle" catalog="system"/>
+                                                        <connections>
+                                                            <action selector="additionalInfoButtonTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="0QO-Ct-si4"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstItem="Q4y-z1-dhu" firstAttribute="leading" secondItem="LuJ-lQ-YOi" secondAttribute="leading" id="Vgp-d6-OHx"/>
+                                                    <constraint firstAttribute="bottom" secondItem="Q4y-z1-dhu" secondAttribute="bottom" id="teZ-8r-kHY"/>
+                                                </constraints>
                                             </view>
                                         </subviews>
                                         <constraints>
@@ -97,6 +111,7 @@
                     </view>
                     <connections>
                         <outlet property="addPersonButton" destination="QeF-jG-2Zh" id="V5f-sR-6dL"/>
+                        <outlet property="additionalInfoButton" destination="Q4y-z1-dhu" id="Byc-nn-7mU"/>
                         <outlet property="nameTextField" destination="E6x-Nc-0Zo" id="Rbo-No-MBK"/>
                         <outlet property="profileImageView" destination="Cn4-bO-ucT" id="w8E-Q2-MAN"/>
                     </connections>
@@ -108,6 +123,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="exclamationmark.circle" catalog="system" width="128" height="121"/>
         <image name="person" catalog="system" width="128" height="117"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

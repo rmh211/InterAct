@@ -7,7 +7,8 @@
 
 import UIKit
 
-class AddPersonViewController: UIViewController {
+class AddPersonViewController: UIViewController, Noteable {
+    @IBOutlet weak var additionalInfoButton: UIButton!
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var addPersonButton: UIButton! {
         didSet {
@@ -26,7 +27,11 @@ class AddPersonViewController: UIViewController {
     }
     
     var imagePicker: UIImagePickerController!
-    
+    var notes: String? {
+        didSet {
+            viewModel?.notes = notes
+        }
+    }
     
     var viewModel: AddPersonViewModel? {
         didSet {
@@ -34,6 +39,7 @@ class AddPersonViewController: UIViewController {
             title = viewModel?.title
         }
     }
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,6 +59,9 @@ class AddPersonViewController: UIViewController {
     func initializeTapGestureRecognizer() {
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(changePersonImage))
         profileImageView.addGestureRecognizer(tapGestureRecognizer)
+    }
+    @IBAction func additionalInfoButtonTapped(_ sender: Any) {
+        viewModel?.didRequestNotes(titled: "Add Personal Details")
     }
 }
 extension AddPersonViewController: AddPersonViewModelDelegate {

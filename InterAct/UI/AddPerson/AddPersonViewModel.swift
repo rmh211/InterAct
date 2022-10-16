@@ -12,16 +12,18 @@ import UIKit
 protocol AddPersonViewModelCoordinatorDelegate: AnyObject {
     func addPersonViewController(_ managedAppContext: NSManagedObjectContext)
     func addPersonViewControllerDidAddPerson(_ addPersonViewModel: AddPersonViewModel)
+    func addPersonViewController(_ addPersonViewModel: AddPersonViewModel, didRequestNotesTitled title: String)
     
 }
 protocol AddPersonViewModelDelegate: AnyObject {
     
 }
 
-class AddPersonViewModel {
+class AddPersonViewModel: Noteable {
     weak var coordinatorDelegate: AddPersonViewModelCoordinatorDelegate?
     weak var viewDelegate: AddPersonViewModelDelegate?
     let title = "Add Person"
+    var notes: String?
     var context: NSManagedObjectContext?
     func savePerson(withName name: String?, image: UIImage) {
         if validate(name: name) {
@@ -29,8 +31,11 @@ class AddPersonViewModel {
             guard let context = context else { return }
             let person = Person(context: context)
             person.name = name
-            guard let imageData = image.pngData() else { return }
+            guard let imageData = image.jpegData(compressionQuality: 0.9) else { return }
             person.image = imageData
+            if let notes = notes {
+                person.notes = notes
+            }
             do {
                 try self.context?.save()
                 DispatchQueue.main.async {
@@ -47,5 +52,8 @@ class AddPersonViewModel {
             return false
         }
         return true
+    }
+    func didRequestNotes(titled title: String) {
+        coordinatorDelegate?.addPersonViewController(self, didRequestNotesTitled: title)
     }
 }

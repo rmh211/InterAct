@@ -76,7 +76,7 @@ class PersonListViewModel: NSObject {
         coordinatorDelegate?.personListViewControllerDidSelectOpenSettings(self)
     }
     func getRegularity() {
-        regularity = defaults.integer(forKey: "Regularity")
+        regularity = defaults.integer(forKey: "Frequency")
         switch regularity {
         case 0:
             regularitySeconds = 604800
@@ -113,7 +113,7 @@ extension PersonListViewModel: UITableViewDataSource {
         var interactionQuality = ""
         if let unsortedInteractions = person.interactions?.array as? [Interaction] {
             if unsortedInteractions.count > 0 {
-               var interactions = unsortedInteractions.sorted()
+               let interactions = unsortedInteractions.sorted()
                 if let interaction = interactions.last {
                     switch interaction.interactionQuality {
                     case 0:

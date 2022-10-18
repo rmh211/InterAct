@@ -8,7 +8,11 @@
 import UIKit
 
 class AddPersonViewController: UIViewController, Noteable {
-    @IBOutlet weak var additionalInfoButton: UIButton!
+    @IBOutlet weak var additionalInfoButton: UIButton! {
+        didSet{
+            additionalInfoButton.setTitle("", for: .normal)
+        }
+    }
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var addPersonButton: UIButton! {
         didSet {

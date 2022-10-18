@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -137,6 +138,7 @@
                     <connections>
                         <outlet property="interactionsTableView" destination="WbT-Pl-J7R" id="bNz-OX-gZL"/>
                         <outlet property="nameLabel" destination="rx9-V0-QJN" id="HMh-Hg-LTg"/>
+                        <outlet property="personInfoButton" destination="bIW-3S-50O" id="4Vd-pq-2e7"/>
                         <outlet property="profileImageView" destination="fQv-VH-NQ3" id="WVV-o5-hWF"/>
                     </connections>
                 </viewController>

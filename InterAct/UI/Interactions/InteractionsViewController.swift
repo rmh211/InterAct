@@ -8,6 +8,11 @@
 import UIKit
 
 class InteractionsViewController: UIViewController, Noteable {
+    @IBOutlet weak var personInfoButton: UIButton! {
+        didSet {
+            personInfoButton.setTitle("", for: .normal)
+        }
+    }
     @IBOutlet weak var profileImageView: UIImageView! {
         didSet {
             profileImageView.makeRound()

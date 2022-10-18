@@ -76,8 +76,8 @@ extension AppCoordinator: PersonListViewModelCoordinatorDelegate {
     }
 }
 extension AppCoordinator: AddPersonViewModelCoordinatorDelegate {
-    func addPersonViewController(_ addPersonViewModel: AddPersonViewModel, didRequestNotesTitled title: String) {
-        showNotesPopover(titled: title)
+    func addPersonViewController(_ addPersonViewModel: AddPersonViewModel, didRequestNotesTitled title: String, withNotes notes: String?) {
+        showNotesPopover(titled: title, withNotes: notes ?? "")
     }
     
     func addPersonViewController(_ managedObjectContext: NSManagedObjectContext) {

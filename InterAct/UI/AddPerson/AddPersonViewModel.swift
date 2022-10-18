@@ -12,7 +12,7 @@ import UIKit
 protocol AddPersonViewModelCoordinatorDelegate: AnyObject {
     func addPersonViewController(_ managedAppContext: NSManagedObjectContext)
     func addPersonViewControllerDidAddPerson(_ addPersonViewModel: AddPersonViewModel)
-    func addPersonViewController(_ addPersonViewModel: AddPersonViewModel, didRequestNotesTitled title: String)
+    func addPersonViewController(_ addPersonViewModel: AddPersonViewModel, didRequestNotesTitled title: String, withNotes notes: String?)
     
 }
 protocol AddPersonViewModelDelegate: AnyObject {
@@ -54,6 +54,6 @@ class AddPersonViewModel: Noteable {
         return true
     }
     func didRequestNotes(titled title: String) {
-        coordinatorDelegate?.addPersonViewController(self, didRequestNotesTitled: title)
+        coordinatorDelegate?.addPersonViewController(self, didRequestNotesTitled: title, withNotes: notes)
     }
 }

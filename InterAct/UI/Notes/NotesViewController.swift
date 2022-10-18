@@ -14,11 +14,10 @@ class NotesViewController: PopOverViewController {
             viewModel?.viewDelegate = self
         }
     }
-
     override func viewDidLoad() {
         super.viewDidLoad()
         makeBackgroundBlurred()
-        createFloatingView(withBackgroundColor: UIColor(named: "primaryBlue") ?? .systemGray5, andBorderColor: UIColor(named: "accentBlue") ?? .clear, height: 450, width: 350, alignment: .top, withYPadding: 50)
+        createFloatingView(withBackgroundColor: UIColor(named: "primaryBlue") ?? .systemGray5, andBorderColor: UIColor(named: "accentBlue") ?? .clear, height: UIScreen.main.bounds.height / 2, width: 350, alignment: .top, withYPadding: 50)
         addTextView()
         addSaveButton()
         addCancelButton()
@@ -30,7 +29,6 @@ class NotesViewController: PopOverViewController {
         let tap = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
         view.addGestureRecognizer(tap)
    }
-
    //Calls this function when the tap is recognized.
    @objc func dismissKeyboard() {
        view.endEditing(true)
@@ -77,7 +75,6 @@ class NotesViewController: PopOverViewController {
     @objc func cancelNote() {
         self.dismiss(animated: true)
     }
-    
 }
 extension NotesViewController: NotesViewModelDelegate {
     func notesViewModel(_ notesViewModel: NotesViewModel, willAddTitle title: String) {

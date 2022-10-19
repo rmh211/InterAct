@@ -54,6 +54,8 @@ class InteractionViewController: UIViewController, Noteable {
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel?.loadInteraction()
+        let tap = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
+        view.addGestureRecognizer(tap)
 
     }
     override func viewDidAppear(_ animated: Bool) {
@@ -61,6 +63,9 @@ class InteractionViewController: UIViewController, Noteable {
     }
     @IBAction func saveEditsTapped(_ sender: Any) {
         viewModel?.saveInteraction(withNotes: notesTextView.text)
+    }
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
     }
 }
 extension InteractionViewController: InteractionViewModelDelegate {

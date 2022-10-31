@@ -13,7 +13,6 @@ class PersonListViewController: UIViewController {
     @IBOutlet weak var personListSearchBar: UISearchBar!
     var addPersonBarButton: UIBarButtonItem!
     var settingsBarButton: UIBarButtonItem!
-    
     var viewModel: PersonListViewModel? {
         didSet {
             viewModel?.viewDelegate = self

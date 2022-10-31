@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 import CoreData
+import Combine
 
 protocol PersonListViewModelCoordinatorDelegate: AnyObject {
     func personListViewController()
@@ -26,7 +27,7 @@ class PersonListViewModel: NSObject {
     weak var coordinatorDelegate: PersonListViewModelCoordinatorDelegate?
     let title = "People"
     var people: [Person]?
-    var filteredPeople: [Person] = []
+    @Published var filteredPeople: [Person] = []
     var context: NSManagedObjectContext?
     var regularity = 0
     var regularitySeconds: Double = 604800

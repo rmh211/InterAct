@@ -8,6 +8,8 @@
 import Foundation
 import UIKit
 import CoreData
+import Combine
+
 protocol InteractionsViewModelCoordinatorDelegate: AnyObject {
     func interactionsViewController(didSelectPerson person: Person, in context: NSManagedObjectContext)
     func interactionsViewController(_ interactionsViewModel: InteractionsViewModel, didSelectAddInteractionWithPerson person: Person, in context: NSManagedObjectContext)
@@ -15,7 +17,6 @@ protocol InteractionsViewModelCoordinatorDelegate: AnyObject {
     func interactionsViewController(_ interactionsViewModel: InteractionsViewModel, willDisplayInteractionDetail interaction: Interaction, saveInContext context: NSManagedObjectContext)
 }
 protocol InteractionsViewModelDelegate: AnyObject {
-    func interactionsViewModel(_ interactionsViewModel: InteractionsViewModel, didUpdateData interactions: [Interaction])
     func interactionsViewModel(_ interactionsViewModel: InteractionsViewModel, willUpdatePerson person: Person)
 }
 class InteractionsViewModel: NSObject, Noteable {
@@ -23,12 +24,7 @@ class InteractionsViewModel: NSObject, Noteable {
     weak var viewDelegate: InteractionsViewModelDelegate?
     let title = "Interactions"
     var person: Person!
-    var interactions: [Interaction] = [] {
-        didSet {
-            interactions.sort()
-            interactions.reverse()
-        }
-    }
+    @Published var interactions: [Interaction] = []
     var context: NSManagedObjectContext?
     var notes: String? {
         didSet {
@@ -40,17 +36,14 @@ class InteractionsViewModel: NSObject, Noteable {
     }
     func loadInteractions() {
         guard let personInteractions = person.interactions?.array as? [Interaction] else { return }
-        interactions = personInteractions
-        viewDelegate?.interactionsViewModel(self, didUpdateData: interactions)
+        interactions = personInteractions.sorted().reversed()
     }
-    
 }
 extension InteractionsViewModel: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         guard let numberOfInteractions = person.interactions?.array.count else { return 0}
         return numberOfInteractions
     }
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let personInteractions = person.interactions?.array as? [Interaction] else { return UITableViewCell() }
         interactions = personInteractions

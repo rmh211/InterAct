@@ -6,8 +6,9 @@
 //
 
 import UIKit
-
+import Combine
 class InteractionsViewController: UIViewController, Noteable {
+    var cancellables: Set<AnyCancellable> = []
     @IBOutlet weak var personInfoButton: UIButton! {
         didSet {
             personInfoButton.setTitle("", for: .normal)
@@ -46,13 +47,18 @@ class InteractionsViewController: UIViewController, Noteable {
         interactionsTableView.dataSource = viewModel
         interactionsTableView.delegate = self
         viewModel?.loadInteractions()
-        interactionsTableView.reloadData()
+        setBindings()
     }
     override func viewDidAppear(_ animated: Bool) {
         viewModel?.loadInteractions()
         viewModel?.savePerson()
         viewModel?.loadPerson()
         interactionsTableView.reloadData()
+    }
+    private func setBindings() {
+        viewModel?.$interactions.sink(receiveValue: { [unowned self] interactions in
+            self.interactions = interactions
+        }).store(in: &cancellables)
     }
     @IBAction func notesButtonTapped(_ sender: Any) {
         viewModel?.didSelectNotes()
@@ -66,11 +72,6 @@ extension InteractionsViewController: InteractionsViewModelDelegate {
     func interactionsViewModel(_ interactionsViewModel: InteractionsViewModel, willUpdatePerson person: Person) {
         profileImageView.image = UIImage(data: person.image)
         nameLabel.text = person.name
-    }
-    
-    func interactionsViewModel(_ interactionsViewModel: InteractionsViewModel, didUpdateData interactions: [Interaction]) {
-        self.interactions = interactions
-        interactionsTableView.reloadData()
     }
 }
 extension InteractionsViewController: UITableViewDelegate {
